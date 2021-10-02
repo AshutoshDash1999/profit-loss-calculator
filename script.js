@@ -7,18 +7,18 @@ var showOuput = document.querySelector("#showOuput");
 function calculateProfitAndLoss(ip, qt, cp){
     if (cp > ip){
         var profit = cp - ip;
-        var profitPercentage = (profit/ip)*100
+        var profitPercentage = Math.floor((profit/ip)*100)
         showOuput.innerText = `Profit is ₹${profit} and profit percentage is ${profitPercentage}%.`
         showOuput.style.color = "#10B981"
     } else if (ip > cp){
 
         var loss = ip - cp;
-        var lossPercentage = (loss/ip)*100
+        var lossPercentage = Math.floor((loss/ip)*100)
         showOuput.innerText = `Loss is ₹${loss} and loss percentage is ${lossPercentage}%.`
         showOuput.style.color = "#EF4444"
     } else {
         showOuput.innerText = "no pain no gain"
-        showOuput.style.color = "#3B82F6"
+        showOuput.style.color = "#FBBF24"
 
     }
 }
@@ -29,7 +29,11 @@ function validateInput(){
     qt = parseInt(quantity.value);
 
     if(ip&&cp&&qt){
-        calculateProfitAndLoss(ip, qt, cp);
+        if (ip >0 && cp > 0 && qt > 0){
+            calculateProfitAndLoss(ip, qt, cp);
+        } else {
+            showOuput.innerText = "Please enter positive values!"
+        }
     } else {
         showOuput.innerText = "Please enter every field.";
         showOuput.style.color = "#F59E0B"
