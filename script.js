@@ -33,6 +33,7 @@ function validateInput(){
             calculateProfitAndLoss(ip, qt, cp);
         } else {
             showOuput.innerText = "Please enter positive values!"
+            showOuput.style.color = "#FBBF24"
         }
     } else {
         showOuput.innerText = "Please enter every field.";
