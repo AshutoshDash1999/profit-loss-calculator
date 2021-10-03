@@ -1,9 +1,10 @@
 body{
-    background: rgb(109, 40, 217);
+    background: linear-gradient(60deg, #F472B6, #6D28D9);
 }
 
 h1{
-    color: #10B981;
+    color: #FBBF24;
+;
 }
 
 .container{
@@ -26,7 +27,7 @@ p{
 }
 
 button{
-    background: #93C5FD;
+    background: #FBBF24;
 }
 
 input{
